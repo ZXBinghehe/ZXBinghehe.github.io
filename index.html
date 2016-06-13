@@ -77,7 +77,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -198,6 +198,63 @@
 
       <div class="body-wrap">
   
+    <article id="post-jquery" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/13/jquery/" class="article-date">
+  	<time datetime="2016-06-13T14:26:26.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/13/jquery/">jQuery源码笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h1><p>(21，94)–定义了一些变量和函数jQuery = function(){};<br>(96,283)给JQ对象，添加一些方法和属性<br>(285,347)extend：JQ继承方法<br>(349,817)jQuery.extend():扩展一些工具方法<br>(877,2856)—Sizzle 复杂选择器的实现　例如：$(“ul li.c”);<br>(2280,3042)-Callbacks：回调对象，通过回调对象管理函数，函数的统一管理方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function fn1()&#123;alert(1);&#125;</span><br><span class="line">function fn2(alert(2));</span><br><span class="line">var cb = $.Callbacks();</span><br><span class="line">cb.add(fn1);</span><br><span class="line">cb.add(fn2);</span><br><span class="line">cb.fire();//1,2</span><br><span class="line">cb.remove(fn2);</span><br><span class="line">cb.fire();//1</span><br></pre></td></tr></table></figure></p>
+<p>(3043,3183)–Deferred延迟对象，对异步的统一管理(创建script,dom加载，ajax，延迟函数)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> setTimeout(function ()&#123;</span><br><span class="line">	alert(1);</span><br><span class="line">&#125;,1000);</span><br><span class="line">alert(2);</span><br><span class="line">//定时器是异步的，在定时器在执行的时候，不会影响后续代码的执行，先弹出2，后弹出1；</span><br><span class="line"></span><br><span class="line">var def = $.Deferred();</span><br><span class="line">setTimeout(function ()&#123;</span><br><span class="line">	def.resolve();</span><br><span class="line">	alert(1);</span><br><span class="line">&#125;,1000);</span><br><span class="line">def.done(function()&#123;</span><br><span class="line">	alert(2);</span><br><span class="line">&#125;);</span><br><span class="line">//先弹1，后弹2；通过延迟对象，保持一定的顺序。</span><br><span class="line">//延迟对象是根据回调进行的，先存，然后在回调。</span><br></pre></td></tr></table></figure></p>
+<p>(3184,3295):support:功能检测：<br>大部分的浏览器checkbox的checked都是on，但是老版本的是空，这样检测。<br>(3308,3652):data()方法的功能：数据缓存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#div1&quot;).data(&apos;name&apos;,&quot;hello&quot;);</span><br><span class="line">$(&quot;#div1&quot;).data(&quot;name&quot;);//hello</span><br><span class="line">//并没有扩展到元素身上。如果扩展到对象上，会出现内存泄漏问题。避免大数据量的数据添加到元素身上，导致内存泄漏</span><br></pre></td></tr></table></figure></p>
+<p>(3653,3797):queue-队列管理(入队) dequeue(出队)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#div2&quot;).animate(&#123;left:100&#125;);</span><br><span class="line">$(&quot;#div&quot;).animate(&#123;top:100&#125;);</span><br><span class="line">//先把他们两个先存在队列中，执行完一个，在调用出队方法。</span><br></pre></td></tr></table></figure></p>
+<p>(3803,4299):attr(),prop(),val(),addClass()等：对元素属性的操作。<br>(4300,5128):on(),trigger():事件操作相关方法。<br>(5140,6057):DOM操作，添加，删除，获取，包装等等。DOM筛选……<br>(6058,6620):css()方法，专门针对样式的操作。<br>(6621,7854):提交的数据和ajax的操作-ajax,load,getJSON<br>(7855,8585):animate,运动方法，show,hide,fadeIn,fadeOut等等。<br>(8585,8792):offset,scrollTop,位置与尺寸的方法<br>(8804,8821):JQ支持模块化的一个模式，不仅支持amd的，还可以支持commonjs<br>(8826)：window.jQuery = window.$ =jQuery 对外提供的接口</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-new-arc" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -215,7 +272,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/12/new-arc/">数据结构与算法</a>
+      <a class="article-title" href="/2016/06/12/new-arc/">数据结构与算法复习笔记</a>
     </h1>
   
 
@@ -232,7 +289,14 @@
 <li>树形结构：数据结构像一棵树一样，类似于族谱结构</li>
 <li>图形结构：数据之间的关系错综复杂，多对多<h2 id="物理结构：数据的逻辑结构在计算机中的存储形式。"><a href="#物理结构：数据的逻辑结构在计算机中的存储形式。" class="headerlink" title="物理结构：数据的逻辑结构在计算机中的存储形式。"></a>物理结构：数据的逻辑结构在计算机中的存储形式。</h2>物理结构可以分为顺序存储和链式存储</li>
 <li>顺序存储：类似于排队，每一个数据有一个固定的位置，某一数据取出后，其位置让出给后面的数据。</li>
-<li>链式存储：类似于取号排队，数据按一定顺序排序但可以随意走动，存储位置不固定，但是因为使用链式存储存储数据时，除了存储数据本身外，还要有一定空间存储上一个数据的地址指针，所以链式存储耗费的空间比顺序存储大。</li>
+<li>链式存储：类似于取号排队，数据按一定顺序排序但可以随意走动，存储位置不固定，但是因为使用链式存储存储数据时，除了存储数据本身外，还要有一定空间存储上一个数据的地址指针，所以链式存储耗费的空间比顺序存储大。<h1 id="算法的五个特征"><a href="#算法的五个特征" class="headerlink" title="算法的五个特征"></a>算法的五个特征</h1></li>
+<li>有穷性：算法在执行有限步骤后，自动结束而不会出现无限循环，并且在可接受的时间范围内完成</li>
+<li>确定性：算法的每个步骤都具有确定的含义，不会出现二义性</li>
+<li>算法在一定条件下，一条执行路径，相同的输入只有有唯一的输出</li>
+<li>算法的每个步骤都应精确定义而无歧义</li>
+<li>可行性：算法每一步都必须可行，即每一步都能够通过执行有限次数完成<h1 id="算法效率（执行时间）的度量方法"><a href="#算法效率（执行时间）的度量方法" class="headerlink" title="算法效率（执行时间）的度量方法"></a>算法效率（执行时间）的度量方法</h1></li>
+<li>事后统计<br>  缺陷：算法和测试程序时一对一的</li>
+<li>事前分析估算方法<br>  算法质量影响因素：<br>  1.算法采用的策略和方案<br>  2.编译产生的代码质量<br>  3.问题的输入规模<br>  4.机器执行指令的速度<br>  我们在分析一个算法的运行时间时，重要的是把基本操作的数量和输入模式关联起来</li>
 </ul>
 
       
