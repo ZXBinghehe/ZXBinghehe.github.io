@@ -77,7 +77,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a>
+						<a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a>
 					</div>
 				</section>
 				
@@ -243,6 +243,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+	</div>
+
       
 
       
@@ -307,6 +311,13 @@
 </li>
 </ul>
 <p>在比较执行次数时，可以忽略加法常数，与最高次项相乘的常数也不重要<br>判断一个算法效率时，函数中的常数和其他次要项常常可以忽略，而更应该关注主项（最高次项）的阶数</p>
+<h1 id="算法的时间复杂度和空间复杂度（执行次数-时间）"><a href="#算法的时间复杂度和空间复杂度（执行次数-时间）" class="headerlink" title="算法的时间复杂度和空间复杂度（执行次数==时间）"></a>算法的时间复杂度和空间复杂度（执行次数==时间）</h1><p>用大写O（）来体现算法时间复杂度的记法，称为大O记法<br>分析时间复杂度的规律：</p>
+<ul>
+<li>用常数1取代运行时间中所有的加法常数</li>
+<li>在修改后的运行次数函数中，只保留最高阶项</li>
+<li>如果最高项存在且不是1，则去除与这个项相乘的常数</li>
+<li>常见的时间复杂度所耗费的时间从小到大依次是：O(1)&lt;O(logn)&lt;(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n)</li>
+</ul>
 
       
     </div>
