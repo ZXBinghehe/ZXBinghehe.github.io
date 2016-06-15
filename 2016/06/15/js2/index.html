@@ -4,18 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>jQuery源码笔记 | Xiaobing</title>
+  <title>基本类型和引用类型的值 | Xiaobing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本框架(21，94)–定义了一些变量和函数jQuery = function(){};(96,283)给JQ对象，添加一些方法和属性(285,347)extend：JQ继承方法(349,817)jQuery.extend():扩展一些工具方法(877,2856)—Sizzle 复杂选择器的实现　例如：$(“ul li.c”);(2280,3042)-Callbacks：回调对象，通过回调对象管理">
+  <meta name="description" content="检测类型
+typeof操作符如果变量的值是对象或者Null，则typeof操作符会返回object；
+instanceof 用于检测是什么类型的对象,返回true或false基本语法：result=variable instanceof constructorperson instanceof Object–&amp;gt;变量person是Object吗执行环境和作用域1 没有块级作用域12345678">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery源码笔记">
-<meta property="og:url" content="http://yoursite.com/2016/06/13/jquery/index.html">
+<meta property="og:title" content="基本类型和引用类型的值">
+<meta property="og:url" content="http://yoursite.com/2016/06/15/js2/index.html">
 <meta property="og:site_name" content="Xiaobing">
-<meta property="og:description" content="基本框架(21，94)–定义了一些变量和函数jQuery = function(){};(96,283)给JQ对象，添加一些方法和属性(285,347)extend：JQ继承方法(349,817)jQuery.extend():扩展一些工具方法(877,2856)—Sizzle 复杂选择器的实现　例如：$(“ul li.c”);(2280,3042)-Callbacks：回调对象，通过回调对象管理">
-<meta property="og:updated_time" content="2016-06-15T12:09:35.728Z">
+<meta property="og:description" content="检测类型
+typeof操作符如果变量的值是对象或者Null，则typeof操作符会返回object；
+instanceof 用于检测是什么类型的对象,返回true或false基本语法：result=variable instanceof constructorperson instanceof Object–&amp;gt;变量person是Object吗执行环境和作用域1 没有块级作用域12345678">
+<meta property="og:updated_time" content="2016-06-15T12:50:29.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery源码笔记">
-<meta name="twitter:description" content="基本框架(21，94)–定义了一些变量和函数jQuery = function(){};(96,283)给JQ对象，添加一些方法和属性(285,347)extend：JQ继承方法(349,817)jQuery.extend():扩展一些工具方法(877,2856)—Sizzle 复杂选择器的实现　例如：$(“ul li.c”);(2280,3042)-Callbacks：回调对象，通过回调对象管理">
+<meta name="twitter:title" content="基本类型和引用类型的值">
+<meta name="twitter:description" content="检测类型
+typeof操作符如果变量的值是对象或者Null，则typeof操作符会返回object；
+instanceof 用于检测是什么类型的对象,返回true或false基本语法：result=variable instanceof constructorperson instanceof Object–&amp;gt;变量person是Object吗执行环境和作用域1 没有块级作用域12345678">
   
     <link rel="alternative" href="/atom.xml" title="Xiaobing" type="application/atom+xml">
   
@@ -197,11 +203,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-jquery" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/13/jquery/" class="article-date">
-  	<time datetime="2016-06-13T14:26:26.000Z" itemprop="datePublished">2016-06-13</time>
+      <a href="/2016/06/15/js2/" class="article-date">
+  	<time datetime="2016-06-15T12:48:05.000Z" itemprop="datePublished">2016-06-15</time>
 </a>
     </div>
   
@@ -214,7 +220,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery源码笔记
+      基本类型和引用类型的值
     </h1>
   
 
@@ -223,7 +229,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
         
@@ -234,17 +240,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h1><p>(21，94)–定义了一些变量和函数jQuery = function(){};<br>(96,283)给JQ对象，添加一些方法和属性<br>(285,347)extend：JQ继承方法<br>(349,817)jQuery.extend():扩展一些工具方法<br>(877,2856)—Sizzle 复杂选择器的实现　例如：$(“ul li.c”);<br>(2280,3042)-Callbacks：回调对象，通过回调对象管理函数，函数的统一管理方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function fn1()&#123;alert(1);&#125;</span><br><span class="line">function fn2(alert(2));</span><br><span class="line">var cb = $.Callbacks();</span><br><span class="line">cb.add(fn1);</span><br><span class="line">cb.add(fn2);</span><br><span class="line">cb.fire();//1,2</span><br><span class="line">cb.remove(fn2);</span><br><span class="line">cb.fire();//1</span><br></pre></td></tr></table></figure></p>
-<p>(3043,3183)–Deferred延迟对象，对异步的统一管理(创建script,dom加载，ajax，延迟函数)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> setTimeout(function ()&#123;</span><br><span class="line">	alert(1);</span><br><span class="line">&#125;,1000);</span><br><span class="line">alert(2);</span><br><span class="line">//定时器是异步的，在定时器在执行的时候，不会影响后续代码的执行，先弹出2，后弹出1；</span><br><span class="line"></span><br><span class="line">var def = $.Deferred();</span><br><span class="line">setTimeout(function ()&#123;</span><br><span class="line">	def.resolve();</span><br><span class="line">	alert(1);</span><br><span class="line">&#125;,1000);</span><br><span class="line">def.done(function()&#123;</span><br><span class="line">	alert(2);</span><br><span class="line">&#125;);</span><br><span class="line">//先弹1，后弹2；通过延迟对象，保持一定的顺序。</span><br><span class="line">//延迟对象是根据回调进行的，先存，然后在回调。</span><br></pre></td></tr></table></figure></p>
-<p>(3184,3295):support:功能检测：<br>大部分的浏览器checkbox的checked都是on，但是老版本的是空，这样检测。<br>(3308,3652):data()方法的功能：数据缓存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#div1&quot;).data(&apos;name&apos;,&quot;hello&quot;);</span><br><span class="line">$(&quot;#div1&quot;).data(&quot;name&quot;);//hello</span><br><span class="line">//并没有扩展到元素身上。如果扩展到对象上，会出现内存泄漏问题。避免大数据量的数据添加到元素身上，导致内存泄漏</span><br></pre></td></tr></table></figure></p>
-<p>(3653,3797):queue-队列管理(入队) dequeue(出队)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#div2&quot;).animate(&#123;left:100&#125;);</span><br><span class="line">$(&quot;#div&quot;).animate(&#123;top:100&#125;);</span><br><span class="line">//先把他们两个先存在队列中，执行完一个，在调用出队方法。</span><br></pre></td></tr></table></figure></p>
-<p>(3803,4299):attr(),prop(),val(),addClass()等：对元素属性的操作。<br>(4300,5128):on(),trigger():事件操作相关方法。<br>(5140,6057):DOM操作，添加，删除，获取，包装等等。DOM筛选……<br>(6058,6620):css()方法，专门针对样式的操作。<br>(6621,7854):提交的数据和ajax的操作-ajax,load,getJSON<br>(7855,8585):animate,运动方法，show,hide,fadeIn,fadeOut等等。<br>(8585,8792):offset,scrollTop,位置与尺寸的方法<br>(8804,8821):JQ支持模块化的一个模式，不仅支持amd的，还可以支持commonjs<br>(8826)：window.jQuery = window.$ =jQuery 对外提供的接口</p>
-<h1 id="（21-94）"><a href="#（21-94）" class="headerlink" title="（21,94）"></a>（21,94）</h1><h2 id="function-window-undefined-匿名函数自执行"><a href="#function-window-undefined-匿名函数自执行" class="headerlink" title="(function(window, undefined){})();匿名函数自执行"></a>(function(window, undefined){})();匿名函数自执行</h2><ul>
-<li>为什么要将window以参数形式传入<br>1.函数使用window时，查找速度更快<br>2.压缩时，局部变量名可以变为单个字符，压缩效率更高</li>
-<li>为什么将undefined以参数形式传入<br>防止undefined的值被修改：undefined是window下的一个属性，在某些浏览器中，undefined的值可以被修改。</li>
-<li>“use strict“<br>“use strict” 将javascript设置为严格模式，在严格模式下，对语法规范要求严格，jQuery不推荐使用，因为在ASP .NET环境下，arguments.caller.callee不能使用，在一些老版本的浏览器中，会出现“假死”现象。</li>
-<li>rootjQuery<br>rootjQuery=jQuery(document);<br>1.为了后期代码压缩<br>2.增加可维护性（可阅读性）</li>
-<li>readyList<br>与DOM加载相关的变量</li>
+        <h1 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h1><ul>
+<li>typeof操作符<br>如果变量的值是对象或者Null，则typeof操作符会返回object；</li>
+<li>instanceof 用于检测是什么类型的对象,返回true或false<br>基本语法：<br>result=variable instanceof constructor<br>person instanceof Object–&gt;变量person是Object吗<h1 id="执行环境和作用域"><a href="#执行环境和作用域" class="headerlink" title="执行环境和作用域"></a>执行环境和作用域</h1>1 没有块级作用域<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;</span><br><span class="line">	var color=&quot;green&quot;;</span><br><span class="line">&#125;</span><br><span class="line">alert(color);//在java中会报错，因为color会在if语句执行后销毁</span><br><span class="line">//注意                                                                                                                                                                                                                                  </span><br><span class="line">for(var i=0;i&lt;10;i++)&#123;</span><br><span class="line">	//代码</span><br><span class="line">&#125;</span><br><span class="line">alert(i);//10</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2 垃圾收集<br>javascript具有自动垃圾收集机制，其原理是：找出那些不再继续使用的变量，然后释放其内存，为此，垃圾收集器会按照固定的时间间隔，周期性的执行这一操作。垃圾收集机制可以采取两种方法：</p>
+<ul>
+<li>标记清除：<br>垃圾收集器在运行时给内存中的所有变量都加上标记，然后，它会去掉环境中的变量和被环境中变量引用的变量的标记，最后清除仍带有标记的变量</li>
+<li>引用计数<br>跟踪记录每一个值被引用的次数，当这个值的引用次数变成0时，则说明没有办法再访问这个值了，当垃圾收集器下次再运行时，就会释放引用次数为零的值所占用的空间。<br>但是这种方式可能会导致循环引用<br>3 管理内存<br>确保占用最小的内存可以让页面获得更好的性能，而优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据，一旦数据不再有用，就将其值设置为null值来释放内存<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function creatPerson(name)&#123;</span><br><span class="line">	var localPerson=new Object();//局部变量，会在其离开执行环境时自定被解除占用</span><br><span class="line">	localPerson.name=naem;</span><br><span class="line">	return localPerson;</span><br><span class="line">&#125;                      </span><br><span class="line">var globalPerson=creatPerson(&quot;jonm&quot;);</span><br><span class="line">//代码</span><br><span class="line">globalPerson=null //手工解除占用</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -255,18 +260,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/15/js1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/15/js3/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          javascript操作符
+          引用类型
         
       </div>
     </a>
   
   
-    <a href="/2016/06/12/suanfa/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构与算法复习笔记</div>
+    <a href="/2016/06/15/js1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript操作符</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -301,7 +306,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="jquery" data-title="jQuery源码笔记" data-url="http://yoursite.com/2016/06/13/jquery/"></div>
+	<div class="ds-thread" data-thread-key="js2" data-title="基本类型和引用类型的值" data-url="http://yoursite.com/2016/06/15/js2/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
