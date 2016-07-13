@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a>
+						<a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a>
 					</div>
 				</section>
 				
@@ -197,6 +197,123 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-whit-space" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/12/whit-space/" class="article-date">
+  	<time datetime="2016-07-12T12:12:50.000Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/12/whit-space/">white-space、word-wrap、word-break</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h1><p>white-space属性设置如何处理元素内的空白和换行<br>其取值为可以为<br>1.normal:默认，文本超出边界时换行，但是会将文本内的空格缩减为一个<br>2.pre:文本中的空格和换行都会被保留，在边界时不会自动换行<br>3.nowrap：文本不换行，空格缩减为一个。<br>4.pre-wrap: 保留空格和换行，且在边界时会自动换行<br>5.pre-line: 空格缩减，保留换行<br>6.inherit :继承<br>white-space与text-overflow合用，可以出现当文本超出边界时，显示省略号的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text&#123;</span><br><span class="line">	white-space:nowrap;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">	text-overflow:ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="wrod-wrap"><a href="#wrod-wrap" class="headerlink" title="wrod-wrap"></a>wrod-wrap</h1><p>word-wrap属性设置是否允许浏览器在单词内进行断句<br>1.normal:不允许在英文单词内进行断句。<br>2.break-word: 允许在单词内进行断句，但是当遇到长单词时，浏览器会先将其放入下一行，如果文本在下一行中仍然超出边界，则浏览器才对其进行断句</p>
+<h1 id="word-break"><a href="#word-break" class="headerlink" title="word-break:"></a>word-break:</h1><p>word-break属性标明怎样进行断句<br>1.normal: 看浏览器自身的设置<br>2.break-all: 遇到长单词时，浏览器直接对其断句，不会先将其放入新的一行。<br>3.keep-all: 不允许断句</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-layout" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/12/layout/" class="article-date">
+  	<time datetime="2016-07-12T12:02:03.000Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/12/layout/">布局</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="两列布局"><a href="#两列布局" class="headerlink" title="两列布局"></a>两列布局</h1><h2 id="一列定宽，一列自适应"><a href="#一列定宽，一列自适应" class="headerlink" title="一列定宽，一列自适应"></a>一列定宽，一列自适应</h2><p>1.把要固定宽度的一栏设置为浮动，自适应宽度的一栏设置margin值,其缺点两列高度不会一定相等<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.side&#123;float:left;width:200px;background-color:#C00000;height:200px;&#125;</span><br><span class="line">.main&#123;height:200px;background-color:#4F81BD;margin-left:210px;&#125;</span><br><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;side&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.自适应宽度的一栏采用position定位,优点在于自适应宽度一栏的高度会自适应另一栏，所以缺点也在于当自适应宽度一栏高于另一栏时会有问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.wrapper&#123;position:relative;&#125;</span><br><span class="line">.side&#123;width:200px;background-color:#C00000;height:300px;&#125;</span><br><span class="line">.main&#123;background-color:#4F81BD;position:absolute;top:0;left:210px;right:0;bottom:0;&#125;</span><br><span class="line">  &lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;side&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-new-article" class="article article-type-post" itemscope itemprop="blogPost">
   

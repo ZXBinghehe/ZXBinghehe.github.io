@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: javascript | Xiaobing</title>
+  <title>white-space、word-wrap、word-break | Xiaobing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xiaobing">
-<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
+  <meta name="description" content="white-spacewhite-space属性设置如何处理元素内的空白和换行其取值为可以为1.normal:默认，文本超出边界时换行，但是会将文本内的空格缩减为一个2.pre:文本中的空格和换行都会被保留，在边界时不会自动换行3.nowrap：文本不换行，空格缩减为一个。4.pre-wrap: 保留空格和换行，且在边界时会自动换行5.pre-line: 空格缩减，保留换行6.inherit :继">
+<meta property="og:type" content="article">
+<meta property="og:title" content="white-space、word-wrap、word-break">
+<meta property="og:url" content="http://yoursite.com/2016/07/12/whit-space/index.html">
 <meta property="og:site_name" content="Xiaobing">
-<meta property="og:description">
+<meta property="og:description" content="white-spacewhite-space属性设置如何处理元素内的空白和换行其取值为可以为1.normal:默认，文本超出边界时换行，但是会将文本内的空格缩减为一个2.pre:文本中的空格和换行都会被保留，在边界时不会自动换行3.nowrap：文本不换行，空格缩减为一个。4.pre-wrap: 保留空格和换行，且在边界时会自动换行5.pre-line: 空格缩减，保留换行6.inherit :继">
+<meta property="og:updated_time" content="2016-07-13T02:57:02.584Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xiaobing">
-<meta name="twitter:description">
+<meta name="twitter:title" content="white-space、word-wrap、word-break">
+<meta name="twitter:description" content="white-spacewhite-space属性设置如何处理元素内的空白和换行其取值为可以为1.normal:默认，文本超出边界时换行，但是会将文本内的空格缩减为一个2.pre:文本中的空格和换行都会被保留，在边界时不会自动换行3.nowrap：文本不换行，空格缩减为一个。4.pre-wrap: 保留空格和换行，且在边界时会自动换行5.pre-line: 空格缩减，保留换行6.inherit :继">
   
     <link rel="alternative" href="/atom.xml" title="Xiaobing" type="application/atom+xml">
   
@@ -196,115 +197,111 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-whit-space" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/07/12/whit-space/" class="article-date">
+  	<time datetime="2016-07-12T12:12:50.000Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      white-space、word-wrap、word-break
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/15/js3/" class="archive-article-date">
-  	<time datetime="2016-06-15T13:18:20.000Z" itemprop="datePublished">6月 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/15/js3/">引用类型</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h1><p>white-space属性设置如何处理元素内的空白和换行<br>其取值为可以为<br>1.normal:默认，文本超出边界时换行，但是会将文本内的空格缩减为一个<br>2.pre:文本中的空格和换行都会被保留，在边界时不会自动换行<br>3.nowrap：文本不换行，空格缩减为一个。<br>4.pre-wrap: 保留空格和换行，且在边界时会自动换行<br>5.pre-line: 空格缩减，保留换行<br>6.inherit :继承<br>white-space与text-overflow合用，可以出现当文本超出边界时，显示省略号的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text&#123;</span><br><span class="line">	white-space:nowrap;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">	text-overflow:ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="wrod-wrap"><a href="#wrod-wrap" class="headerlink" title="wrod-wrap"></a>wrod-wrap</h1><p>word-wrap属性设置是否允许浏览器在单词内进行断句<br>1.normal:不允许在英文单词内进行断句。<br>2.break-word: 允许在单词内进行断句，但是当遇到长单词时，浏览器会先将其放入下一行，如果文本在下一行中仍然超出边界，则浏览器才对其进行断句</p>
+<h1 id="word-break"><a href="#word-break" class="headerlink" title="word-break:"></a>word-break:</h1><p>word-break属性标明怎样进行断句<br>1.normal: 看浏览器自身的设置<br>2.break-all: 遇到长单词时，浏览器直接对其断句，不会先将其放入新的一行。<br>3.keep-all: 不允许断句</p>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/15/js2/" class="archive-article-date">
-  	<time datetime="2016-06-15T12:48:05.000Z" itemprop="datePublished">6月 15</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/15/js2/">基本类型和引用类型的值</a>
-    </h1>
   
+    <a href="/2016/07/12/layout/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">布局</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/15/js1/" class="archive-article-date">
-  	<time datetime="2016-06-15T12:40:38.000Z" itemprop="datePublished">6月 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/15/js1/">javascript操作符</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="whit-space" data-title="white-space、word-wrap、word-break" data-url="http://yoursite.com/2016/07/12/whit-space/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -330,9 +327,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

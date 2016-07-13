@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: javascript | Xiaobing</title>
+  <title>布局 | Xiaobing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xiaobing">
-<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
+  <meta name="description" content="两列布局一列定宽，一列自适应1.把要固定宽度的一栏设置为浮动，自适应宽度的一栏设置margin值,其缺点两列高度不会一定相等123456.side&amp;#123;float:left;width:200px;background-color:#C00000;height:200px;&amp;#125;.main&amp;#123;height:200px;background-color:#4F81BD;margi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="布局">
+<meta property="og:url" content="http://yoursite.com/2016/07/12/layout/index.html">
 <meta property="og:site_name" content="Xiaobing">
-<meta property="og:description">
+<meta property="og:description" content="两列布局一列定宽，一列自适应1.把要固定宽度的一栏设置为浮动，自适应宽度的一栏设置margin值,其缺点两列高度不会一定相等123456.side&amp;#123;float:left;width:200px;background-color:#C00000;height:200px;&amp;#125;.main&amp;#123;height:200px;background-color:#4F81BD;margi">
+<meta property="og:updated_time" content="2016-07-13T03:06:22.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xiaobing">
-<meta name="twitter:description">
+<meta name="twitter:title" content="布局">
+<meta name="twitter:description" content="两列布局一列定宽，一列自适应1.把要固定宽度的一栏设置为浮动，自适应宽度的一栏设置margin值,其缺点两列高度不会一定相等123456.side&amp;#123;float:left;width:200px;background-color:#C00000;height:200px;&amp;#125;.main&amp;#123;height:200px;background-color:#4F81BD;margi">
   
     <link rel="alternative" href="/atom.xml" title="Xiaobing" type="application/atom+xml">
   
@@ -196,115 +197,119 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-layout" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/07/12/layout/" class="article-date">
+  	<time datetime="2016-07-12T12:02:03.000Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      布局
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/15/js3/" class="archive-article-date">
-  	<time datetime="2016-06-15T13:18:20.000Z" itemprop="datePublished">6月 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/15/js3/">引用类型</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="两列布局"><a href="#两列布局" class="headerlink" title="两列布局"></a>两列布局</h1><h2 id="一列定宽，一列自适应"><a href="#一列定宽，一列自适应" class="headerlink" title="一列定宽，一列自适应"></a>一列定宽，一列自适应</h2><p>1.把要固定宽度的一栏设置为浮动，自适应宽度的一栏设置margin值,其缺点两列高度不会一定相等<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.side&#123;float:left;width:200px;background-color:#C00000;height:200px;&#125;</span><br><span class="line">.main&#123;height:200px;background-color:#4F81BD;margin-left:210px;&#125;</span><br><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;side&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.自适应宽度的一栏采用position定位,优点在于自适应宽度一栏的高度会自适应另一栏，所以缺点也在于当自适应宽度一栏高于另一栏时会有问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.wrapper&#123;position:relative;&#125;</span><br><span class="line">.side&#123;width:200px;background-color:#C00000;height:300px;&#125;</span><br><span class="line">.main&#123;background-color:#4F81BD;position:absolute;top:0;left:210px;right:0;bottom:0;&#125;</span><br><span class="line">  &lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;side&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/15/js2/" class="archive-article-date">
-  	<time datetime="2016-06-15T12:48:05.000Z" itemprop="datePublished">6月 15</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/15/js2/">基本类型和引用类型的值</a>
-    </h1>
+    <a href="/2016/07/12/whit-space/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          white-space、word-wrap、word-break
+        
+      </div>
+    </a>
   
+  
+    <a href="/2016/07/10/new-article/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css 选择器</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/15/js1/" class="archive-article-date">
-  	<time datetime="2016-06-15T12:40:38.000Z" itemprop="datePublished">6月 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/15/js1/">javascript操作符</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="layout" data-title="布局" data-url="http://yoursite.com/2016/07/12/layout/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -330,9 +335,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
